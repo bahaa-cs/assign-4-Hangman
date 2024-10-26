@@ -4,23 +4,24 @@ function display_answer(elements,iteration,element_id,word){
     
     if (word.includes(letter)){
 
-        var result = Array(word.length).fill('_ ');
+        var result = Array(word.length).fill('_ ')
         for (var i = 0; i < word.length; i++) {
             if (word[i] === letter) {
                 result[i] = letter;
             }
         }
+        document.getElementById(element_id).innerHTML = result.join(' ')
     }
-    document.getElementById(element_id).innerHTML = result
+    
 }
 
 function word_generator(){
-    var words=["Engineer", "Art", "FlexBox", "Pressure", "Vision","Discipline","Logic","Deadlines"]
+    var words=["ENGINEER", "ART", "FLEXBOX", "PRESSURE", "VISION","DISCIPLINE","LOGIC","DEADLINES"]
     var index=Math.floor(Math.random() * words.length)
     return words[index]
 }
 var word = word_generator()
-document.getElementById("answer-section").innerHTML = "_ ".repeat(word.length);
+document.getElementById("answer-section").innerHTML = "_ ".repeat(word.length)
 
 var letters = document.querySelectorAll('.letter')
 
