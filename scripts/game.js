@@ -14,9 +14,15 @@ function display_answer(elements,iteration,element_id,word,hangman_id){
         }
         document.getElementById(element_id).innerHTML = result.join(' ')
 
+        if(!result.includes("_")){
+            setTimeout(() => {
+                alert("You Win");
+                location.reload();
+            }, 600);   
+        }
+
     }
     else{
-        console.log(hang_html)
         
         var head = "<img src='./assets/head.svg' class='head' />"
         var body = "<img src='./assets/body.svg' class='body' />"
@@ -42,11 +48,22 @@ function display_answer(elements,iteration,element_id,word,hangman_id){
             hang_html.push("left_leg")}
         else if (!hang_html.includes("right_leg")){
             document.getElementById(hangman_id).innerHTML+=right_leg;
-            hang_html.push("right_leg")}
+            hang_html.push("right_leg")
+            setTimeout(() => {
+                alert("You Lose");
+                location.reload();
+            }, 600);  
+        }
+        else{
+            
+
+        }
+
 
 
 
     }
+
     
 }
 
