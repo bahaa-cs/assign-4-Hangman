@@ -1,9 +1,11 @@
 
-var letters = document.querySelectorAll('.letter')
-
-function typing_letters(){
-    console.log(letters[0].textContent)
+function typing_letters(elements,iteration){
+    console.log(elements[iteration].textContent)
 }
 
-letters[0].addEventListener("click",typing_letters)
+var letters = document.querySelectorAll('.letter')
 
+for(var i=0;i<letters.length;i++){
+    var letters = document.querySelectorAll('.letter')
+    letters[i].addEventListener("click",function(){typing_letters(letters,i)})
+}
