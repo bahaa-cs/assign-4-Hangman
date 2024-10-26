@@ -4,7 +4,7 @@ function display_answer(elements,iteration,element_id,word){
     
     if (word.includes(letter)){
 
-        var result = Array(word.length).fill('_ ')
+        var result = document.getElementById(element_id).innerHTML.split(' ')
         for (var i = 0; i < word.length; i++) {
             if (word[i] === letter) {
                 result[i] = letter;
