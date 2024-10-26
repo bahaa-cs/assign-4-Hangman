@@ -10,12 +10,12 @@ for(let i=0;i<letters.length;i++){
 }
 
 function word_generator(){
-    var words=["Engineer", "Art", "FlexBox", "Pressure", "Vision"]
+    var words=["Engineer", "Art", "FlexBox", "Pressure", "Vision","Discipline","Logic","Deadlines"]
     var index=Math.floor(Math.random() * words.length)
     return words[index]
 }
 
-console.log(word_generator())
+document.getElementById("answer-section").innerHTML = "_ ".repeat(word_generator().length);
 
 
-// document.getElementById("answer-section").innerHTML = "-".repeat(2);
+
