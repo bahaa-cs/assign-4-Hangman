@@ -8,5 +8,5 @@ var letters = document.getElementsByClassName("letters")[0].innerHTML
 
 console.log(letters)
 
-var value = document.querySelectorAll('.letter').values
+var value = document.querySelectorAll('.letter')[0].textContent
 console.log(value);
