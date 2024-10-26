@@ -1,11 +1,7 @@
-
-
 var hang_html=[];
 function display_answer(elements,iteration,element_id,word,hangman_id){
-    var letter = elements[iteration].textContent
-    
+    var letter = elements[iteration].textContent   
     if (word.includes(letter)){
-
         var result = document.getElementById(element_id).innerHTML.split(' ')
         for (var i = 0; i < word.length; i++) {
             if (word[i] === letter) {
@@ -13,14 +9,12 @@ function display_answer(elements,iteration,element_id,word,hangman_id){
             }
         }
         document.getElementById(element_id).innerHTML = result.join(' ')
-
         if(!result.includes("_")){
             setTimeout(() => {
                 alert("You Win");
                 location.reload();
             }, 600);   
         }
-
     }
     else{
         
@@ -56,17 +50,11 @@ function display_answer(elements,iteration,element_id,word,hangman_id){
         }
         else{
             
-
         }
 
-
-
-
     }
-
-    
+  
 }
-
 
 function word_generator(){
     var words=["ENGINEER", "ART", "FLEXBOX", "PRESSURE", "VISION","DISCIPLINE","LOGIC","DEADLINES"]
@@ -78,15 +66,10 @@ document.getElementById("answer-section").innerHTML = "_ ".repeat(word.length)
 
 var letters = document.querySelectorAll('.letter')
 
-
 for(let i=0;i<letters.length;i++){
     letters[i].addEventListener("click",function(){display_answer(letters,i,"answer-section",word,"hang")})
 }
 
-// if(!document.getElementById(answer-section).innerHTML.includes("_")){
-//     alert("You Won!")
-//     location.reload()
-// }
 
 
 
